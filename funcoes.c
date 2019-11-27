@@ -219,35 +219,35 @@ void funcoes(){}
 		return 0;
 }
 
-	void drawCircle(ponto *p1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz){
-		
-		p1->x += x;
-		p1->y += y; 
+	void drawCircle(int x1, int y1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz){
+		ponto p1;
+		p1.x = x1 + x;
+		p1.y = y1 + y; 
     putPixel(p1,cor,matriz);
-		p1->x -= x;
-		p1->y += y; 
+		p1.x = x1 - x;
+		p1.y = y1 + y; 
     putPixel(p1,cor,matriz);
-		p1->x += x;
-		p1->y -= y; 
+		p1.x = x1 + x;
+		p1.y = y1 - y; 
     putPixel(p1,cor,matriz);
-		p1->x -= x;
-		p1->y -= y; 
+		p1.x = x1 - x;
+		p1.y = y1 - y; 
     putPixel(p1,cor,matriz);
-		p1->x += y;
-		p1->y += x; 
+		p1.x = x1 + y;
+		p1.y = y1 + x; 
     putPixel(p1,cor,matriz);
-		p1->x -= y;
-		p1->y += x; 
+		p1.x = x1 - y;
+		p1.y = y1 + x; 
     putPixel(p1,cor,matriz);
-		p1->x += y;
-		p1->y -= x; 
+		p1.x = x1 + y;
+		p1.y = y1 - x; 
     putPixel(p1,cor,matriz);
-		p1->x -= y;
-		p1->y -= x; 
+		p1.x = x1 - y;
+		p1.y = y1 - x; 
     putPixel(p1,cor,matriz); 
 }
 
-void circle(ponto *p, int r, Pixel_cor *cor, Dados_Matriz *matriz) { 
+void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz) { 
 
     int x = 0, y = r; 
     int d = 3 - 2 * r; 

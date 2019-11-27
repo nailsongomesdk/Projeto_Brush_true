@@ -21,7 +21,7 @@ Pixel_cor *color(int r, int g, int b);
 
 void polygon(ponto *p1, int n_pontos, Pixel_cor *cor, Dados_Matriz *matriz);
 
-void drawCircle(ponto p1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz);
+void drawCircle(int x1, int y1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz);
 
 void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz);
 
