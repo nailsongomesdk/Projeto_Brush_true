@@ -251,7 +251,7 @@ void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz) {
 
     int x = 0, y = r; 
     int d = 3 - 2 * r; 
-    drawCircle(p, x, y, cor, matriz); 
+    drawCircle(p.x, p.y, x, y, cor, matriz); 
     while (y >= x) { 
         
         x++; 
@@ -265,7 +265,7 @@ void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz) {
         						} 
         else    d = d + 4 * x + 6; 
 
-        drawCircle(p, x, y, cor, matriz); 
+        drawCircle(p.x, p.y, x, y, cor, matriz); 
        // delay(50); 
     						
 		} 
