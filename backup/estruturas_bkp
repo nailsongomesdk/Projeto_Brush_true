@@ -1,0 +1,19 @@
+
+typedef struct pixel_cor {
+    int vermelho, verde, azul;
+} Pixel_cor;
+
+typedef struct imagem_dados {
+    int largura;
+    int altura;
+    Pixel_cor *pixels;
+} Imagem_dados;
+
+
+typedef struct Pixel_1 {
+    int r, g , b;
+} Pixel_1;
+
+typedef struct ponto {
+    int x , y;
+} ponto;
