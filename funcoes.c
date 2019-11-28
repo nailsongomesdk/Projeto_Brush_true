@@ -157,7 +157,7 @@ void funcoes(){}
 
 	}
 
-	void *ler_arquivo(const char *nome_arquivo, Dados_Matriz *matriz) {
+/*	void *ler_arquivo(const char *nome_arquivo, Dados_Matriz *matriz) {
 		
 		int largura, altura, r, g, b, i, n_pontos,raio_circulo;
 		ponto pcirculo;
@@ -216,8 +216,8 @@ void funcoes(){}
 
 		}
     fclose(arq);
-		
-}
+		return 0;
+}*/
 
 	void drawCircle(int x1, int y1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz){
 		ponto p1;
