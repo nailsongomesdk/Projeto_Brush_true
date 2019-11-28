@@ -6,62 +6,39 @@
 
 int main() {
 
-int i, j;
-Dados_Matriz *matriz;
-ponto pcirculo;
-Pixel_cor *cor;
-int largura, altura, r, g, b, n_pontos,raio_circulo;
-char nomeArquivo[20];
+		int i, j;
+    Dados_Matriz *matriz;
+		ponto p2, p3, pcirculo;
+		Pixel_cor *cor;
+		ponto *p1 = (ponto*) malloc(sizeof(ponto) * 3) ;
 
-		FILE *arq = fopen("test.txt", "r");
-    if (arq == NULL){
-      printf ("Erro - arquivo não encontrado\n");
-      return NULL;} 
+		p1[0].x = 0;
+		p1[0].y = 100;
+		p1[1].x = 200;
+		p1[1].y = 300;
+		p1[2].x = 100;
+		p1[2].y = 300;
+	
+		pcirculo.x = 200;
+		pcirculo.y = 300;
 
-    char teste_funcao[12];
+    
+		
+		//ler_arquivo("teste2.txt", matriz);
 
-		while(fscanf (arq , "%s" , teste_funcao) != EOF){
+	
+		matriz = image(600, 400);
+		
+		clear(matriz, 0, 0, 0);
 
-			if (strcmp("image", teste_funcao) == 0) {
-					fscanf(arq, "%d", &largura);
-					fscanf(arq, "%d", &altura);
-					matriz = image(largura, altura);
-					}
-			else if(strcmp("clear", teste_funcao) == 0){
-				fscanf(arq, "%d", &r);
-				fscanf(arq, "%d", &g);
-				fscanf(arq, "%d", &b);
-				clear(matriz, r, g, b);
-					}
-			else if(strcmp("save", teste_funcao) == 0){
-				fscanf(arq, "%s", nomeArquivo);
-				save(nomeArquivo, matriz);			
-				}
+		cor = color(255, 255, 0);
+
+		//line(p1, p2, cor, matriz);
+		polygon(p1, 3, cor, matriz);
+
+		circle(pcirculo, 100, cor, matriz);
 			
-			else if(strcmp("polygon", teste_funcao) == 0){
-								fscanf(arq, "%d", &n_pontos);
-								ponto *p_1 = (ponto*) malloc(sizeof(ponto) * n_pontos);
-								
-								for(i = 0; i < n_pontos; i++){
-									fscanf(arq, "%d", &p_1[i].x);
-									fscanf(arq, "%d", &p_1[i].y);									
-								}
-
-								polygon(p_1, n_pontos, cor, matriz);
-								free(p_1);
-							}
-			else if(strcmp("circle", teste_funcao) == 0){
-
-								fscanf(arq, "%d", &pcirculo.x);
-								fscanf(arq, "%d", &pcirculo.y);
-								fscanf(arq, "%d", &raio_circulo);
-
-			}
-
-
-
-		}
-    fclose(arq);
+		save("temp.ppm", matriz);
 		
     return 0;
 }

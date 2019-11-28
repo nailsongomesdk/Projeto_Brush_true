@@ -5,6 +5,17 @@
 
 void funcoes(){}
 
+void polygon(ponto *p1, int n_pontos, Pixel_cor *cor, Dados_Matriz *matriz){
+		int i;
+
+		for(i = 0; i < n_pontos-1; i++){
+			//line(p1[i], p1[i+1], cor, matriz);
+		}
+		
+		//line(p1[0], p1[n_pontos], cor, matriz);
+
+	}
+
   Imagem_dados *image(int largura, int altura){
     int i,j;
 
