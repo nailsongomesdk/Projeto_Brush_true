@@ -216,7 +216,7 @@ void funcoes(){}
 
 		}
     fclose(arq);
-		return 0;
+		
 }
 
 	void drawCircle(int x1, int y1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz){
