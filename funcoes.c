@@ -140,6 +140,7 @@ void funcoes(){}
 
 	Pixel_cor *color(int r, int g, int b){
 		Pixel_cor* cor = (Pixel_cor*) malloc(sizeof(Pixel_cor));
+
 		cor->r = r;
 		cor->g = g;
 		cor->b = b;
@@ -156,68 +157,6 @@ void funcoes(){}
 			line(p1[n_pontos-1], p1[0], cor, matriz);
 
 	}
-
-/*	void *ler_arquivo(const char *nome_arquivo, Dados_Matriz *matriz) {
-		
-		int largura, altura, r, g, b, i, n_pontos,raio_circulo;
-		ponto pcirculo;
-		Pixel_cor *cor;
-		
-		char nomeArquivo[20];
-		
-    
-		FILE *arq = fopen(nome_arquivo, "r");
-    if (arq == NULL){
-      printf ("Erro - arquivo não encontrado\n");
-      return NULL;} 
-
-    char teste_funcao[99];
-
-		while(fscanf (arq , "%s" , teste_funcao) != EOF){
-			printf("%s\n", teste_funcao);
-			if (strcmp("image", teste_funcao) == 0) {
-					fscanf(arq, "%d", &largura);
-					fscanf(arq, "%d", &altura);
-					matriz = image(largura, altura);
-					}
-			else if(strcmp("clear", teste_funcao) == 0){
-				fscanf(arq, "%d", &r);
-				fscanf(arq, "%d", &g);
-				fscanf(arq, "%d", &b);
-				clear(matriz, r, g, b);
-					}
-			else if(strcmp("save", teste_funcao) == 0){
-				fscanf(arq, "%s", nomeArquivo);
-			save(nomeArquivo, matriz);			
-				}
-			
-			else if(strcmp("polygon", teste_funcao) == 0){
-								fscanf(arq, "%d", &n_pontos);
-								ponto *p_1 = (ponto*) malloc(sizeof(ponto) * n_pontos);
-
-								for(i = 0; i < n_pontos; i++){
-									fscanf(arq, "%d", &p_1[i].x);
-									fscanf(arq, "%d", &p_1[i].y);									
-								}
-
-								polygon(p_1, n_pontos, cor, matriz);
-								free(p_1);
-							}
-			else if(strcmp("circle", teste_funcao) == 0){
-
-								fscanf(arq, "%d", &pcirculo.x);
-								fscanf(arq, "%d", &pcirculo.y);
-								fscanf(arq, "%d", &raio_circulo);
-
-
-			}
-
-
-
-		}
-    fclose(arq);
-		return 0;
-}*/ 
 
 	void Desenhar_Circle(int x1, int y1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz){
 		ponto p1;
@@ -268,3 +207,81 @@ void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz) {
     						
 		} 
 }
+
+	void *ler_arquivo(const char *nome_arquivo, Dados_Matriz *matriz) {
+		
+		int largura, altura, r, g, b, i, n_pontos,raio_circulo;
+		ponto pcirculo, p1, p2;
+		Pixel_cor *cor = (Pixel_cor*) malloc(sizeof(Pixel_cor));
+		
+		char nomeArquivo[20];
+		
+    
+		FILE *arq = fopen(nome_arquivo, "r");
+    if (arq == NULL){
+      printf ("Erro - arquivo não encontrado\n");
+      return NULL;} 
+
+    char teste_funcao[99];
+
+		while(fscanf (arq , "%s" , teste_funcao) != EOF){
+			printf("%s\n", teste_funcao);
+			if (strcmp("image", teste_funcao) == 0) {
+						fscanf(arq, "%d", &largura);
+						fscanf(arq, "%d", &altura);
+						matriz = image(largura, altura);
+			}
+			else if(strcmp("clear", teste_funcao) == 0){
+								fscanf(arq, "%d", &r);
+								fscanf(arq, "%d", &g);
+								fscanf(arq, "%d", &b);
+								clear(matriz, r, g, b);
+			}
+			else if(strcmp("save", teste_funcao) == 0){
+								fscanf(arq, "%s", nomeArquivo);
+								save(nomeArquivo, matriz);			
+			}		
+			else if(strcmp("polygon", teste_funcao) == 0){
+								fscanf(arq, "%d", &n_pontos);
+								ponto *p_1 = (ponto*) malloc(sizeof(ponto) * n_pontos);
+
+								for(i = 0; i < n_pontos; i++){
+									fscanf(arq, "%d", &p_1[i].x);
+									fscanf(arq, "%d", &p_1[i].y);									
+								}
+
+								polygon(p_1, n_pontos, cor, matriz);
+								free(p_1);
+			}
+			else if(strcmp("circle", teste_funcao) == 0){
+
+								fscanf(arq, "%d", &pcirculo.x);
+								fscanf(arq, "%d", &pcirculo.y);
+								fscanf(arq, "%d", &raio_circulo);
+
+								circle(pcirculo, raio_circulo, cor, matriz);
+			}
+			else if(strcmp("color", teste_funcao) == 0){
+								fscanf(arq, "%d", &r);
+								fscanf(arq, "%d", &g);
+								fscanf(arq, "%d", &b);
+								cor = color(r, g, b);
+			}
+			else if(strcmp("line", teste_funcao) == 0){
+								fscanf(arq, "%d", &p1.x);
+								printf("%d", p1.x);
+								fscanf(arq, "%d", &p1.y);
+								fscanf(arq, "%d", &p2.x);
+								fscanf(arq, "%d", &p2.y);
+
+								line(p1, p2, cor, matriz);
+			}
+
+
+
+		}
+    fclose(arq);
+		return 0;
+}
+
+	

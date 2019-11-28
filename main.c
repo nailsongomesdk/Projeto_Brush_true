@@ -24,10 +24,10 @@ int main() {
 
     
 		
-		//ler_arquivo("teste2.txt", matriz);
+		ler_arquivo("test.txt", matriz);
 
 	
-		matriz = image(600, 400);
+		/*matriz = image(600, 400);
 		
 		clear(matriz, 0, 0, 0);
 
@@ -38,7 +38,7 @@ int main() {
 
 		circle(pcirculo, 100, cor, matriz);
 			
-		save("temp.ppm", matriz);
+		save("temp.ppm", matriz);*/
 		
     return 0;
 }
