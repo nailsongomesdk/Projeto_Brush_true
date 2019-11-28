@@ -1,6 +1,6 @@
 
-typedef struct Pixel_cor {
-   	unsigned int r, g , b; 
+typedef struct{
+  unsigned int r, g , b; 
 } Pixel_cor;
 
 typedef struct{
@@ -8,8 +8,8 @@ typedef struct{
 	Pixel_cor **str_matriz;
 } Dados_Matriz;
 
-typedef struct ponto {
-    unsigned int x , y;
+typedef struct{
+  unsigned int x, y;
 } ponto;
 
 

@@ -6,24 +6,8 @@
 
 int main() {
 
-		int i, j;
-    Dados_Matriz *matriz;
-		ponto p2, p3, pcirculo;
-		Pixel_cor *cor;
-		ponto *p1 = (ponto*) malloc(sizeof(ponto) * 3) ;
-
-		p1[0].x = 0;
-		p1[0].y = 100;
-		p1[1].x = 200;
-		p1[1].y = 300;
-		p1[2].x = 100;
-		p1[2].y = 300;
+	  Dados_Matriz *matriz = (Dados_Matriz*) malloc(sizeof(Dados_Matriz));
 	
-		pcirculo.x = 200;
-		pcirculo.y = 300;
-
-    
-		
 		ler_arquivo("test.txt", matriz);
 
 	

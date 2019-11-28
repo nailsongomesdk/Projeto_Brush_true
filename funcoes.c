@@ -186,32 +186,32 @@ void funcoes(){}
     putPixel(p1,cor,matriz); 
 }
 
-void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz) { 
+	void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz) { 
 
-    int x = 0, y = r; 
-    int d = 3 - 2 * r; 
-    Desenhar_Circle(p.x, p.y, x, y, cor, matriz); 
-    while (y >= x) { 
-        
-        x++; 
-  
+			int x = 0, y = r; 
+			int d = 3 - 2 * r; 
+			Desenhar_Circle(p.x, p.y, x, y, cor, matriz); 
+			while (y >= x) { 
+					
+					x++; 
+		
 
-        if (d > 0) { 
-            y--;  
-            d = d + 4 * (x - y) + 10; 
-        						} 
-        else    d = d + 4 * x + 6; 
+					if (d > 0) { 
+							y--;  
+							d = d + 4 * (x - y) + 10; 
+											} 
+					else    d = d + 4 * x + 6; 
 
-        Desenhar_Circle(p.x, p.y, x, y, cor, matriz); 
+					Desenhar_Circle(p.x, p.y, x, y, cor, matriz); 
 
-    						
-		} 
-}
+									
+			} 
+	}
 
 	void *ler_arquivo(const char *nome_arquivo, Dados_Matriz *matriz) {
 		
-		int largura, altura, r, g, b, i, n_pontos,raio_circulo;
-		ponto pcirculo, p1, p2;
+		int largura, altura, r, g, b, i, n_pontos,raio_circulo, p1[4];
+		ponto pcirculo;
 		Pixel_cor *cor = (Pixel_cor*) malloc(sizeof(Pixel_cor));
 		
 		char nomeArquivo[20];
@@ -268,13 +268,14 @@ void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz) {
 								cor = color(r, g, b);
 			}
 			else if(strcmp("line", teste_funcao) == 0){
-								fscanf(arq, "%d", &p1.x);
-								printf("%d", p1.x);
-								fscanf(arq, "%d", &p1.y);
-								fscanf(arq, "%d", &p2.x);
-								fscanf(arq, "%d", &p2.y);
+																
+								fscanf(arq, "%d", &p1[0]);
+								fscanf(arq, "%d", &p1[1]);
+								fscanf(arq, "%d", &p1[2]);
+								fscanf(arq, "%d", &p1[3]);
 
-								line(p1, p2, cor, matriz);
+								line(p1[0], p1[1], cor, matriz);
+								free(p1);
 			}
 
 
