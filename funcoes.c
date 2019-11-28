@@ -219,7 +219,7 @@ void funcoes(){}
 		return 0;
 }*/
 
-	void drawCircle(int x1, int y1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz){
+	void Desenhar_Circle(int x1, int y1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz){
 		ponto p1;
 		p1.x = x1 + x;
 		p1.y = y1 + y; 
@@ -251,22 +251,20 @@ void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz) {
 
     int x = 0, y = r; 
     int d = 3 - 2 * r; 
-    drawCircle(p.x, p.y, x, y, cor, matriz); 
+    Desenhar_Circle(p.x, p.y, x, y, cor, matriz); 
     while (y >= x) { 
         
         x++; 
   
-        // check for decision parameter 
-        // and correspondingly  
-        // update d, x, y 
+
         if (d > 0) { 
             y--;  
             d = d + 4 * (x - y) + 10; 
         						} 
         else    d = d + 4 * x + 6; 
 
-        drawCircle(p.x, p.y, x, y, cor, matriz); 
-       // delay(50); 
+        Desenhar_Circle(p.x, p.y, x, y, cor, matriz); 
+
     						
 		} 
 }
