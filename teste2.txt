@@ -1,3 +1,0 @@
-image 600 400
-clear 0 0 0
-save imagem.ppm

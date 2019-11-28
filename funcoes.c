@@ -217,7 +217,7 @@ void funcoes(){}
 		}
     fclose(arq);
 		return 0;
-}*/
+}*/ 
 
 	void Desenhar_Circle(int x1, int y1, int x, int y, Pixel_cor *cor, Dados_Matriz *matriz){
 		ponto p1;
