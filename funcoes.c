@@ -281,13 +281,14 @@ void funcoes(){}
 								fscanf(arq, "%d", &p1[1].y);									
 
 								line(p1[0], p1[1], cor, matriz);
-								free(p1);
+								printf ("teste1");
 								
 			}
 
 
 
 		}
+		free(p1);
     fclose(arq);
 		return 0;
 }
