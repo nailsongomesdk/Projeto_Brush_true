@@ -210,8 +210,8 @@ void funcoes(){}
 
 	void *ler_arquivo(const char *nome_arquivo, Dados_Matriz *matriz) {
 		
-		int largura, altura, r, g, b, i, n_pontos,raio_circulo, p1[4];
-		ponto pcirculo;
+		int largura, altura, r, g, b, i, n_pontos,raio_circulo;
+		ponto pcirculo, *p1 = (ponto*) malloc(sizeof(ponto) * 2);
 		Pixel_cor *cor = (Pixel_cor*) malloc(sizeof(Pixel_cor));
 		
 		char nomeArquivo[20];
@@ -222,7 +222,7 @@ void funcoes(){}
       printf ("Erro - arquivo não encontrado\n");
       return NULL;} 
 
-    char teste_funcao[99];
+    char teste_funcao[12];
 
 		while(fscanf (arq , "%s" , teste_funcao) != EOF){
 			printf("%s\n", teste_funcao);
@@ -230,16 +230,19 @@ void funcoes(){}
 						fscanf(arq, "%d", &largura);
 						fscanf(arq, "%d", &altura);
 						matriz = image(largura, altura);
+						
 			}
 			else if(strcmp("clear", teste_funcao) == 0){
 								fscanf(arq, "%d", &r);
 								fscanf(arq, "%d", &g);
 								fscanf(arq, "%d", &b);
 								clear(matriz, r, g, b);
+								
 			}
 			else if(strcmp("save", teste_funcao) == 0){
 								fscanf(arq, "%s", nomeArquivo);
-								save(nomeArquivo, matriz);			
+								save(nomeArquivo, matriz);
+									
 			}		
 			else if(strcmp("polygon", teste_funcao) == 0){
 								fscanf(arq, "%d", &n_pontos);
@@ -252,6 +255,7 @@ void funcoes(){}
 
 								polygon(p_1, n_pontos, cor, matriz);
 								free(p_1);
+								
 			}
 			else if(strcmp("circle", teste_funcao) == 0){
 
@@ -260,22 +264,25 @@ void funcoes(){}
 								fscanf(arq, "%d", &raio_circulo);
 
 								circle(pcirculo, raio_circulo, cor, matriz);
+								
 			}
 			else if(strcmp("color", teste_funcao) == 0){
 								fscanf(arq, "%d", &r);
 								fscanf(arq, "%d", &g);
 								fscanf(arq, "%d", &b);
 								cor = color(r, g, b);
+								
 			}
 			else if(strcmp("line", teste_funcao) == 0){
 																
-								fscanf(arq, "%d", &p1[0]);
-								fscanf(arq, "%d", &p1[1]);
-								fscanf(arq, "%d", &p1[2]);
-								fscanf(arq, "%d", &p1[3]);
+								fscanf(arq, "%d", &p1[0].x);
+								fscanf(arq, "%d", &p1[0].y);
+								fscanf(arq, "%d", &p1[1].x);
+								fscanf(arq, "%d", &p1[1].y);									
 
 								line(p1[0], p1[1], cor, matriz);
 								free(p1);
+								
 			}
 
 
