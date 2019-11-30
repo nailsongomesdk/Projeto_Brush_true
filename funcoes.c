@@ -208,10 +208,15 @@ void funcoes(){}
 			} 
 	}
 
+	void rect(ponto p1, int tamanho, Pixel_cor *cor, Dados_Matriz *matriz){
+		
+
+	}
+
 	void *ler_arquivo(const char *nome_arquivo, Dados_Matriz *matriz) {
 		
 		int largura, altura, r, g, b, i, n_pontos,raio_circulo;
-		ponto pcirculo, *p1 = (ponto*) malloc(sizeof(ponto) * 2);
+		ponto pcirculo;
 		Pixel_cor *cor = (Pixel_cor*) malloc(sizeof(Pixel_cor));
 		
 		char nomeArquivo[20];
@@ -273,6 +278,8 @@ void funcoes(){}
 								
 			}
 			else if(strcmp("line", teste_funcao) == 0){
+
+								ponto *p1 = (ponto*) malloc(sizeof(ponto) * 2);
 																
 								fscanf(arq, "%d", &p1[0].x);
 								fscanf(arq, "%d", &p1[0].y);
@@ -280,13 +287,24 @@ void funcoes(){}
 								fscanf(arq, "%d", &p1[1].y);									
 
 								line(p1[0], p1[1], cor, matriz);
+								free(p1);
 								
+			}
+			else if(strcmp("rect", teste_funcao) == 0){
+
+								ponto p1;
+
+								fscanf(arq, "%d", &p1.x);
+								fscanf(arq, "%d", &p1.y);
+								fscanf(arq, "%d", &largura);
+
+								rect(p1, largura, cor, matriz);
+																
 			}
 
 
 
 		}
-		free(p1);
     fclose(arq);
 		return 0;
 }
