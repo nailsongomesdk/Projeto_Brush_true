@@ -225,7 +225,6 @@ void funcoes(){}
     char teste_funcao[12];
 
 		while(fscanf (arq , "%s" , teste_funcao) != EOF){
-			printf("%s\n", teste_funcao);
 			if (strcmp("image", teste_funcao) == 0) {
 						fscanf(arq, "%d", &largura);
 						fscanf(arq, "%d", &altura);
@@ -281,7 +280,6 @@ void funcoes(){}
 								fscanf(arq, "%d", &p1[1].y);									
 
 								line(p1[0], p1[1], cor, matriz);
-								printf ("teste1");
 								
 			}
 
