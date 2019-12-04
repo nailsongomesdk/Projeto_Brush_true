@@ -25,7 +25,7 @@ void Desenhar_Circle(int x1, int y1, int x, int y, Pixel_cor *cor, Dados_Matriz 
 
 void circle(ponto p, int r, Pixel_cor *cor, Dados_Matriz *matriz);
 
-void rect(ponto p1, int tamanho, Pixel_cor *cor, Dados_Matriz *matriz);
+void rect(ponto rect_p1, int rect_largura,int rect_altura, Pixel_cor *cor, Dados_Matriz *matriz);
 
 
 #endif

@@ -208,14 +208,58 @@ void funcoes(){}
 			} 
 	}
 
-	void rect(ponto p1, int tamanho, Pixel_cor *cor, Dados_Matriz *matriz){
-		
+	void rect(ponto rect_p1, int rect_largura,int rect_altura, Pixel_cor *cor, Dados_Matriz *matriz){
+		// faltando definir usando a altura e largura da matriz.
+		ponto rect_p2, rect_p3, rect_p4;
+		rect_p2.y = rect_p1.y;
+		rect_p3.x = rect_p1.x;
+		if(rect_p1.x+rect_largura<600){
+			rect_p2.x = rect_p1.x+rect_largura;
+			rect_p4.x = rect_p1.x+rect_largura;
+		}
+		else {
+			rect_p2.x = rect_p1.x-rect_largura;
+			rect_p4.x = rect_p1.x-rect_largura;
+		}
+		if(rect_p1.y+rect_altura<400){
+			rect_p3.y = rect_p1.y+rect_altura;
+			rect_p4.y = rect_p1.y+rect_altura;
+		}
+		else {
+			rect_p3.y = rect_p1.y-rect_altura;
+			rect_p4.y = rect_p1.y-rect_altura;
+		}
+
+		line(rect_p1, rect_p2, cor, matriz);
+		line(rect_p2, rect_p4, cor, matriz);
+		line(rect_p4, rect_p3, cor, matriz);
+		line(rect_p3, rect_p1, cor, matriz);
 
 	}
 
+	/* função fill - faltando adaptar
+	void boundaryFill8(int x, int y, int fill_color,int boundary_color) 
+{ 
+    if(getpixel(x, y) != boundary_color && 
+       getpixel(x, y) != fill_color) 
+    { 
+        putpixel(x, y, fill_color); 
+        boundaryFill8(x + 1, y, fill_color, boundary_color); 
+        boundaryFill8(x, y + 1, fill_color, boundary_color); 
+        boundaryFill8(x - 1, y, fill_color, boundary_color); 
+        boundaryFill8(x, y - 1, fill_color, boundary_color); 
+        boundaryFill8(x - 1, y - 1, fill_color, boundary_color); 
+        boundaryFill8(x - 1, y + 1, fill_color, boundary_color); 
+        boundaryFill8(x + 1, y - 1, fill_color, boundary_color); 
+        boundaryFill8(x + 1, y + 1, fill_color, boundary_color); 
+    } 
+}
+
+	*/
+
 	void *ler_arquivo(const char *nome_arquivo, Dados_Matriz *matriz) {
 		
-		int largura, altura, r, g, b, i, n_pontos,raio_circulo;
+		int largura, altura, r, g, b, i, n_pontos,raio_circulo,rect_largura,rect_altura;
 		ponto pcirculo;
 		Pixel_cor *cor = (Pixel_cor*) malloc(sizeof(Pixel_cor));
 		
@@ -292,13 +336,14 @@ void funcoes(){}
 			}
 			else if(strcmp("rect", teste_funcao) == 0){
 
-								ponto p1;
+								ponto rect_p1;
 
-								fscanf(arq, "%d", &p1.x);
-								fscanf(arq, "%d", &p1.y);
-								fscanf(arq, "%d", &largura);
+								fscanf(arq, "%d", &rect_p1.x);
+								fscanf(arq, "%d", &rect_p1.y);
+								fscanf(arq, "%d", &rect_largura);
+								fscanf(arq, "%d", &rect_altura);
 
-								rect(p1, largura, cor, matriz);
+								rect(rect_p1, rect_largura,rect_altura, cor, matriz);
 																
 			}
 
