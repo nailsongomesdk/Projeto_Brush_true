@@ -9,8 +9,10 @@ int main() {
 	  Dados_Matriz *matriz = (Dados_Matriz*) malloc(sizeof(Dados_Matriz));
 
 		ler_arquivo("test.txt", matriz);
+		
+    return 0;
+}
 
-	
 
 
 		/* Teste sem função de leitura ok
@@ -30,23 +32,14 @@ int main() {
 		p2.x = 300;
 		p2.y = 350;
 		pcirculo.x = 100;
-		pcirculo.y = 100; */
-		/*matriz = image(600, 400);
-		printf ("a1");
+		pcirculo.y = 100;
+		matriz = image(600, 400);
 		clear(matriz, 0, 0, 0);
-		printf ("a2");
 		cor = color(255, 255, 0);
-		printf ("a3");
 		line(p1, p2, cor, matriz);
-		printf ("a4");
 		polygon(p_1, 3, cor, matriz);
-		printf ("a5");
 		circle(pcirculo, 100, cor, matriz);
 		save("temp.ppm", matriz); */
-		
-    return 0;
-}
-
 
 
 
