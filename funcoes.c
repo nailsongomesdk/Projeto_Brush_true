@@ -209,7 +209,6 @@ void funcoes(){}
 	}
 
 	void rect(ponto rect_p1, int rect_largura,int rect_altura, Pixel_cor *cor, Dados_Matriz *matriz){
-		// faltando definir usando a altura e largura da matriz.
 		ponto rect_p2, rect_p3, rect_p4;
 		rect_p2.y = rect_p1.y;
 		rect_p3.x = rect_p1.x;
@@ -248,8 +247,6 @@ void funcoes(){}
 		cor_anterior.g = matriz->str_matriz[x][y].g;
 		cor_anterior.b = matriz->str_matriz[x][y].b;
 		
-		//if(getpixel(x, y) != boundary_color &&
-       //getpixel(x, y) != fill_color)
 			if(cor_anterior.r != cor->r && cor_anterior.g != cor->g && cor_anterior.b != cor->b)
     {
         putPixel(p1, cor, matriz);
