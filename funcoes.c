@@ -240,6 +240,9 @@ void funcoes(){}
 	void fill(int x, int y , Pixel_cor *cor, Dados_Matriz *matriz){
 
     Pixel_cor cor_anterior;
+		ponto p1;
+		p1.x = x;
+		p1.y = y;
 
 		cor_anterior.r = matriz->str_matriz[x][y].r;
 		cor_anterior.g = matriz->str_matriz[x][y].g;
@@ -247,61 +250,15 @@ void funcoes(){}
 		
 		//if(getpixel(x, y) != boundary_color &&
        //getpixel(x, y) != fill_color)
-			if(cor_anterior.r != cor->r || cor_anterior.g != cor->g || cor_anterior.b != cor->b)
+			if(cor_anterior.r != cor->r && cor_anterior.g != cor->g && cor_anterior.b != cor->b)
     {
         putPixel(p1, cor, matriz);
-        fill(x + 1, y, r, boundary_color);
-        fill(x, y + 1, fill_color, boundary_color);
-        fill(x - 1, y, fill_color, boundary_color);
-        fill(x, y - 1, fill_color, boundary_color);
+        fill(x + 1, y, cor, matriz);
+        fill(x, y + 1, cor, matriz);
+        fill(x - 1, y, cor, matriz);
+        fill(x, y - 1, cor, matriz);
     }
 }
-	
-	
-	/*void preencher(ponto p1, Dados_Matriz* matriz_img, Pixel_cor color){
-  
-  if (matriz_img->str_matriz[p1.x][p1.y].r == color.r && matriz_img->str_matriz[p1.x][p1.y].g == ver.g && matriz_img[y][x].b == ver.b && y < 399 && y > -1 && x < 599 && x > -1){
-    //printf("%d %d\n", x, y);
-    pintapixel(x , y , matriz_img, color);
-    preencher(x, y + 1, matriz_img, ver, color);
-    preencher(x + 1, y, matriz_img, ver, color);
-    preencher(x - 1, y, matriz_img, ver, color);
-    preencher(x, y - 1, matriz_img, ver, color);
-    
-  }
-  
-}
-	
-	 função fill - faltando adaptar
-	void fill(ponto p1, Pixel_cor *cor, Dados_Matriz *matriz) 
-{ 
-    Pixel_cor *cor_anterior;
-
-		cor_anterior->r = matriz->str_matriz[p1.x][p1.y].r;
-		cor_anterior->g = matriz->str_matriz[p1.x][p1.y].g;
-		cor_anterior->b = matriz->str_matriz[p1.x][p1.y].b;
-		
-    if (cor_anterior != cor){ 
-
-				putPixel(p1, cor, matriz);
-				p1.x += 1;
-        fill(p1, cor, matriz);
-				p1.x -= 2;
-				fill(p1, cor, matriz);
-				p1.x += 1;
-				p1.y += 1;
-        fill(p1, cor, matriz);
-				p1.y -= 2;
-        fill(p1, cor, matriz); 
-
-
-        //fill(x - 1, y, fill_color, boundary_color); 
-        //fill(x , y + 1, fill_color, boundary_color); 
-        //fill(x , y - 1, fill_color, boundary_color); 
-        //fill(x + 1, y , fill_color, boundary_color); 
-    } 
-}*/
-
 	
 
 	void *ler_arquivo(const char *nome_arquivo, Dados_Matriz *matriz) {
