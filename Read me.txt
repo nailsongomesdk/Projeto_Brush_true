@@ -6,7 +6,17 @@ NAILSON GOMES DE ARAÚJO
 
 O QUE FOI FEITO?
 			Foram feitas as funções solicitadas(com a exeção de duas), todas utilizando ponteiros de forma a poupar memoria e recurso do computador. foram implementadas as funções: IMAGE, CLEAR, SAVE, LINE, CIRCLE, POLYGON, RECT e COLOR.
-			
+			Todas as funções funcionam lendo um arquivo txt que contem o nome de cada função(que o usuario que utilizar), seguidas dos dados com os quais essa função ira utilizar(separados ou por espaços ou por linha).
+
+			IMAGE: recebe a altura e largura do documento txt e criar uma imagem(matriz).
+			CLEAR: recebe 3 valores para o r,g e b(variaveis usadas para definir cor do pixel) nessa ordem e utiliza esses valores para limpar todas a imagem e a deixando apenas na cor lida.
+			COLOR: Recebe 3 valores para o r,g e b(variaveis usadas para definir cor do pixel) nessa ordem e utiliza esses valores para definir a cor a ser utilizada nas funções seguintes.
+			LINE: Recebe 4 valores - os dois primeiros definindo respectivamente a posições x e y do primeiro ponto e os 2 ultimos as posições x e y do segundo ponto. Após isso ela traça uma linha de pixels de um ponto ao outro usando a cor da função color ou a cor branca como padrão caso color ainda não tenha cido chamada.
+			CIRCLE: Recebe 3 valores - os dois primeiros definindo respectivamente a posições x e y do centro do circulo e o terceiro o valor do raio. Após isso ela coloca pixels com a cor determinada para forma o circulo. 
+			POLYGON: Recebe primeiro um valor determinando a quantidade de pontos, após isso ela recebe as coordenadas x e y respectivamente de cada ponto em sequencia e usa a função line para traçar uma linha de um ponto para o outro em sequencia, terminando traçando uma linha do ultimo ponto para o primeiro.
+			RECT:recebe 4 valores - os dois primeiros definindo respectivamente a posições x e y do primeiro ponto do retangulo e os dois ultimos definindo a largura e altura do retangulo respectivamente. Após isso ela criar mais 3 pontos de acordo com a largura e altura do retangulo e dos limites da matriz e usa a função line para criar linhas entre os 4 pontos.
+			SAVE: Salva a matriz criar e modificada nas funções anteriores de acordo com o nome presente logo após(Lembrando que esse nome deve terminar com .ppm para que ela seja salva de forma correta).
+
 			Extras: Publicação feita no GitHub e implementação de teste na validação dos pontos utilizados no arquivo TXT de leitura.
 		
 O QUE NAO FOI FEITO?
