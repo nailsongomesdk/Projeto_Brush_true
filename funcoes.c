@@ -299,7 +299,10 @@ void funcoes(){}
 
 								for(i = 0; i < n_pontos; i++){
 									fscanf(arq, "%d", &p_1[i].x);
-									fscanf(arq, "%d", &p_1[i].y);									
+									fscanf(arq, "%d", &p_1[i].y);
+
+									if(rect_p1.x+rect_largura<matriz->colunas)
+									if(rect_p1.y+rect_altura<matriz->linhas)									
 								}
 
 								polygon(p_1, n_pontos, cor, matriz);

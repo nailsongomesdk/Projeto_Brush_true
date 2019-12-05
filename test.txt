@@ -5,7 +5,7 @@ polygon 3 0 399 300 200 599 399
 rect 500 50 300 200
 color 255 0 0
 circle 200 100 50
-color 0 0 255
+color 0 255 0
 fill 202 101
 line 0 200 100 399
 save test.ppm

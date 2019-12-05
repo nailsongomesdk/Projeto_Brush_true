@@ -1,0 +1,29 @@
+PROJETO ITP 2019.2
+
+ALUNOS: 
+ANDRÉ LUIS GURGEL DE FARIA JUNIOR
+NAILSON GOMES DE ARAÚJO
+
+O QUE FOI FEITO?
+			Foram feitas as funções solicitadas(com a exeção de duas), todas utilizando ponteiros de forma a poupar memoria e recurso do computador. foram implementadas as funções: IMAGE, CLEAR, SAVE, LINE, CIRCLE, POLYGON, RECT e COLOR.
+			
+			Extras: Publicação feita no GitHub e implementação de teste na validação dos pontos utilizados no arquivo TXT de leitura.
+		
+O QUE NAO FOI FEITO?
+
+			O que faltou para finalizar o projeto por completo foi finalizar duas funções, a função de preenchimento(FILL) e a funçao de abrir uma imagem para alteração(OPEN), pois o tempo para implementar as duas ultimas não foi suficiente.
+
+O QUE SERIA FEITO DIFERENTE?
+
+			Acreditamos que para ser feito diferente, seria ter analisado o projeto por completo antes de iniciar, pois nossa maior dificuldade foi no inicio na criação da matriz e as funções de limpar a imagem. demoramos muito para poder alinhar o codigo para ambos entenderem por completo.		
+
+COMO COMPILAR O PROJETO, DEIXANDO EXPLICITO SE FOI UTILIZADA ALGUMA BIBLIOTECA EXTERNA QUE PRECISE SER INSTALADA, QUE VERSAO E QUAIS PARAMETROS EXTRAS SÃO NECESSARIOS PARA O COMPILADOR?
+
+			Projeto feito atravez do site Repl.it, utilizando compilador Ubuntu 18.04.01.
+			Não foram utilizadas nenhum bibliotecas externa.
+
+CONTRIBUIÇAO DE CADA INTEGRANTE NO DESENVOLVIMENTO DO PROJETO:
+
+			Projeto feito em conjuto atravez do site Repl.it - modificações feitas em tempo real por ambos os componentes.
+			Tambem houveram diferentes commits feitos no GitHub pelos dois componentes.
+			Link do Projeto no GitHub: https://github.com/nailsongomesdk/Projeto_Brush_true
