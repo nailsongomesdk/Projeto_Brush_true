@@ -6,6 +6,6 @@ rect 500 50 300 200
 color 255 0 0
 circle 200 100 50
 color 0 255 0
-fill 202 101
+fill 200 100
 line 0 200 100 399
 save test.ppm

@@ -285,6 +285,10 @@ void funcoes(){}
 								fscanf(arq, "%d", &r);
 								fscanf(arq, "%d", &g);
 								fscanf(arq, "%d", &b);
+								if((r > 255 || r < 0) || (g > 255 || g < 0 ) || (b > 255 || b < 0)){
+											printf("valores rgb são invalidos");
+											break;
+								}
 								clear(matriz, r, g, b);
 								
 			}
@@ -299,7 +303,18 @@ void funcoes(){}
 
 								for(i = 0; i < n_pontos; i++){
 									fscanf(arq, "%d", &p_1[i].x);
-									fscanf(arq, "%d", &p_1[i].y);									
+									fscanf(arq, "%d", &p_1[i].y);
+
+									if(p_1[i].x > matriz->colunas){
+										printf("valores de x invalidos");
+										break;
+										}
+
+									if(p_1[i].y > matriz->linhas){
+										printf("valores de y invalidos");
+										break;
+									}
+					
 								}
 
 								polygon(p_1, n_pontos, cor, matriz);
@@ -312,6 +327,16 @@ void funcoes(){}
 								fscanf(arq, "%d", &pcirculo.y);
 								fscanf(arq, "%d", &raio_circulo);
 
+								if(pcirculo.x > matriz->colunas){
+										printf("valores de x invalidos");
+										break;
+										}
+
+									if(pcirculo.y > matriz->linhas){
+										printf("valores de y invalidos");
+										break;
+									}
+
 								circle(pcirculo, raio_circulo, cor, matriz);
 								
 			}
@@ -319,6 +344,10 @@ void funcoes(){}
 								fscanf(arq, "%d", &r);
 								fscanf(arq, "%d", &g);
 								fscanf(arq, "%d", &b);
+								if((r > 255 || r < 0) || (g > 255 || g < 0 ) || (b > 255 || b < 0)){
+								printf("valores rgb são invalidos");
+								break;
+								}
 								cor = color(r, g, b);
 								
 			}
@@ -329,7 +358,17 @@ void funcoes(){}
 								fscanf(arq, "%d", &p1[0].x);
 								fscanf(arq, "%d", &p1[0].y);
 								fscanf(arq, "%d", &p1[1].x);
-								fscanf(arq, "%d", &p1[1].y);									
+								fscanf(arq, "%d", &p1[1].y);
+
+								if(p1[0].x > matriz->colunas || p1[1].x > matriz->colunas){
+										printf("valores de x invalidos");
+										break;
+										}
+
+									if(p1[0].y > matriz->linhas || p1[1].y > matriz->linhas){
+										printf("valores de y invalidos");
+										break;
+									}									
 
 								line(p1[0], p1[1], cor, matriz);
 								free(p1);
@@ -343,6 +382,16 @@ void funcoes(){}
 								fscanf(arq, "%d", &rect_p1.y);
 								fscanf(arq, "%d", &rect_largura);
 								fscanf(arq, "%d", &rect_altura);
+								
+								if(rect_p1.x > matriz->colunas){
+										printf("valores de x invalidos");
+										break;
+										}
+
+									if(rect_p1.y > matriz->linhas){
+										printf("valores de y invalidos");
+										break;
+									}
 
 								rect(rect_p1, rect_largura,rect_altura, cor, matriz);
 																
